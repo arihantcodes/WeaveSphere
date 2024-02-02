@@ -109,7 +109,7 @@ const Accountprofile = ({ user, btnTitle }: props) => {
                    
                     placeholder="Enter your name"
                     className="account-form_input no-focus"
-                    onChange={(e) => handleImage(e,field.onChange)}
+                    
                   />
                 </FormControl>
             
