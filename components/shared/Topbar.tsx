@@ -5,7 +5,7 @@ import { OrganizationSwitcher, SignOutButton, SignedIn } from '@clerk/nextjs'
 
 const Topbar = () => {
 
-    const isUserlogedin = false;
+    const isUserlogedin = true;
 
   return (
     <nav className='topbar'>
