@@ -14,7 +14,7 @@ const  page = async () => {
   }
 
   return (
-    <main className="mx-auto flex max-w-3xl flex-col justify-start px-10 py-20">
+    <main className="mx-auto flex max-w-3xl flex-col justify-start px-10 ">
     <h1 className='head-text'>Onbording </h1>
      <p className="mt-3 text-base-regular text-light-2">
       Complete your profile now to use WeaveSphere
