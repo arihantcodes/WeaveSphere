@@ -5,7 +5,7 @@ import ThreadCard from "@/components/cards/ThreadCard";
 
 
 import { fetchPosts } from "@/lib/actions/thread.action";
-import { featchuser } from "@/lib/actions/user.action";
+import { fetchUser } from "@/lib/actions/user.action";
 
 async function Home({
   searchParams,
@@ -15,7 +15,7 @@ async function Home({
   const user = await currentUser();
   if (!user) return null;
 
-  const userInfo = await featchuser(user.id);
+  const userInfo = await fetchUser(user.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
 
   const result = await fetchPosts(

@@ -4,7 +4,7 @@ import { currentUser } from "@clerk/nextjs";
 import Comment from "@/components/forms/Comment";
 import ThreadCard from "@/components/cards/ThreadCard";
 
-import { featchuser } from "@/lib/actions/user.action";
+import { fetchUser } from "@/lib/actions/user.action";
 import { fetchThreadById } from "@/lib/actions/thread.action";
 
 export const revalidate = 0;
@@ -15,7 +15,7 @@ async function page({ params }: { params: { id: string } }) {
   const user = await currentUser();
   if (!user) return null;
 
-  const userInfo = await featchuser(user.id);
+  const userInfo = await fetchUser(user.id);
   if (!userInfo?.onboarded) redirect("/onboarding");
 
   const thread = await fetchThreadById(params.id);
