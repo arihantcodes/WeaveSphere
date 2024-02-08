@@ -66,7 +66,7 @@ export async function fetchUserPosts(userId: string) {
   try {
     connectDB();
 
-    // Find all threads authored by the user with the given userId
+
     const threads = await User.findOne({ id: userId }).populate({
       path: "threads",
       model: Thread,
@@ -74,7 +74,7 @@ export async function fetchUserPosts(userId: string) {
         {
           path: "community",
           model: Community,
-          select: "name id image _id", // Select the "name" and "_id" fields from the "Community" model
+          select: "name id image _id", 
         },
         {
           path: "children",
@@ -82,7 +82,7 @@ export async function fetchUserPosts(userId: string) {
           populate: {
             path: "author",
             model: User,
-            select: "name image id", // Select the "name" and "_id" fields from the "User" model
+            select: "name image id", 
           },
         },
       ],
@@ -94,7 +94,7 @@ export async function fetchUserPosts(userId: string) {
   }
 }
 
-// Almost similar to Thead (search + pagination) and Community (search + pagination)
+
 export async function fetchUsers({
   userId,
   searchString = "",
