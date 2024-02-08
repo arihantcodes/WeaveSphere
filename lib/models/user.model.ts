@@ -7,11 +7,15 @@ const userSchema =new mongoose.Schema({
         require:true,
 
     },
-    usernmae:{
+    username:{
         type:String,
         require:true,
         unique:true
 
+    },
+    name:{
+        type:String,
+        require:true
     },
     image:String,
     bio:String,
